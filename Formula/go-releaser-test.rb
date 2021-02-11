@@ -6,30 +6,30 @@ require_relative "../custom_download_strategy"
 class GoReleaserTest < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.1.14"
+  version "0.1.16"
   license "Apache 2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.14/go-releaser-test_0.1.14_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "b37efbc5e9194aaffab21d9475b8fc39b61a1b9d74cdfdaacdec35d5c81f2cea"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.16/go-releaser-test_0.1.16_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "db1daf20820e6fff5f45d849fd98e470a0d4adb0d94b053073f85bf26fa70477"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.14/go-releaser-test_0.1.14_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "98a4a361ad23c2c30119dd2b526d584f961a35cdaf0d7cabcf16ed0b037fd5f9"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.16/go-releaser-test_0.1.16_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "d252b7d32d0de55d0e0da472124f72954143dbff7104f090aa01c0636d47d647"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.14/go-releaser-test_0.1.14_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "89f26ee0f8e9ee13df089f4f7e4953a6cdafc9d1cec01b5f9b2fb2ff1096c29e"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.16/go-releaser-test_0.1.16_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "ae2819d05ba03d282273d0666524144802bcf18865978b53571e280ce8e53ed0"
   end
 
   depends_on "mysql" => :optional
 
   def install
-    bin.install "go-releaser-test"
+    bin.install "pscale"
   end
 
   test do
-    system "#{bin}/ptest --version"
+    system "#{bin}/pscale --version"
   end
 end
