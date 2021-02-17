@@ -6,25 +6,25 @@ require_relative "../custom_download_strategy"
 class Pstest < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.1.22"
+  version "0.1.23"
   license "Apache 2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.22/go-releaser-test_0.1.22_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "026508501bfb3df6e49bbf9de5722d05c148ee1f3a4c7913f5ea5f1aa8de0f91"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.23/go-releaser-test_0.1.23_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "c4a535a2c6b01f2951d6b8912e3a95c610d77e582ecaecab4de8f13eeda9f187"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.22/go-releaser-test_0.1.22_macOS_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "0a057f96f718ad7999d6b55d1bc2360c27edd3e69bbcef1b00e3b0debc2fd5b5"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.23/go-releaser-test_0.1.23_macOS_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "6935541d92d04349f2832eeb399404afeb50ec7fd52525524f871ab5ce632636"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.22/go-releaser-test_0.1.22_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "3f57204ab40bffc0ddf66f9e4ea21b889af45def4ac1bd276112d572ecfd4202"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.23/go-releaser-test_0.1.23_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "4df4f839f8df6d979aef3205a21c6eed5531c6543bf3a02be64ca00208634787"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.22/go-releaser-test_0.1.22_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "3b77a182fa18771932f2d9e12fa558463cbe753307c2a001519819a1f402cf6d"
+    url "https://github.com/planetscale/go-releaser-test/releases/download/v0.1.23/go-releaser-test_0.1.23_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "f40f3eb828b90e16225973bca2d5ea7c804eecf56f550a94c853f1d225d6a865"
   end
 
   depends_on "mysql" => :optional
