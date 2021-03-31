@@ -6,25 +6,25 @@ require_relative "../custom_download_strategy"
 class Pscale < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.9.0"
+  version "0.10.0"
   license "Apache 2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/planetscale/cli/releases/download/v0.9.0/pscale_0.9.0_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "cc31e72b5107cefd21dfc73cc37e07fed0208d0c5c3455105225b871b552580d"
+    url "https://github.com/planetscale/cli/releases/download/v0.10.0/pscale_0.10.0_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "ebffb375326096974bc56a995d678412842cb268c3767fd5394805fffe0ac405"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/planetscale/cli/releases/download/v0.9.0/pscale_0.9.0_macOS_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "c65d341313b96174ee70937a5b3917b0a1353dcb64d5430e406fcc19822608c7"
+    url "https://github.com/planetscale/cli/releases/download/v0.10.0/pscale_0.10.0_macOS_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "80e8a601eb694889d170347f68a47c1dbd38cf784ad93e47d5745c1b770db402"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/cli/releases/download/v0.9.0/pscale_0.9.0_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "aa399ce1fae00b0a7352f8781195715fdb37a1afd4b8f6c65d16bef7882d5ed3"
+    url "https://github.com/planetscale/cli/releases/download/v0.10.0/pscale_0.10.0_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "a5fe43fdf525c6d3fe6da47b4444574abcc9cfe40eeb07640c2d7e7c7ba6315d"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/planetscale/cli/releases/download/v0.9.0/pscale_0.9.0_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "8e8da0c10c0827f96a409bd1ad9d1b19d5876e1cfe10c75068c68d9284f0d702"
+    url "https://github.com/planetscale/cli/releases/download/v0.10.0/pscale_0.10.0_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "bd056bc19f8510e6f69db1d4c663241a83fd49482fef04bf65be02cb9955deb2"
   end
 
   depends_on "mysql" => :optional
