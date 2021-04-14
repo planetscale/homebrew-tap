@@ -6,25 +6,25 @@ require_relative "../custom_download_strategy"
 class PscaleProxy < Formula
   desc "The PlanetScale SQL Proxy"
   homepage "https://planetscale.com/"
-  version "0.3.0"
+  version "0.3.1"
   license "Apache 2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.0/pscale-proxy_0.3.0_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "09e907e624abc1c879166f304ea8e28a57d65015a1daf210f96b700581155e3e"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.1/pscale-proxy_0.3.1_macOS_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "c1709ad464d0d6a1cffa4ed3413a3c1ece680a524266702410394baa29bc9eb8"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.0/pscale-proxy_0.3.0_macOS_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "06b51c97e13501e9ec8ef510fc707934e82082b3e487613ff01d31df70707fa7"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.1/pscale-proxy_0.3.1_macOS_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "36aa9bb6e20ba173e6c83bf6af7a2876734a7cabedde2bad4db9f7a3fc1c5f48"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.0/pscale-proxy_0.3.0_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "46e54f2b726d8454c27c075740a8afc82f84b7a7b742856528ab9c0a3149fa2a"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.1/pscale-proxy_0.3.1_linux_amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "5d1b0dc6453ac66efc33c14392d29cb2743e18f8fcc5eaede28f1ade86dd4dbb"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.0/pscale-proxy_0.3.0_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "b42b9deff4b105499e929e986e495c57067f2e25337a1ffc4c5760d4057fddf7"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.3.1/pscale-proxy_0.3.1_linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "1cc7389c3512a6a8e91c297b556e1ef6f43f79ba2e8f1fd9f7ff79860713ec98"
   end
 
   def install
