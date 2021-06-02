@@ -5,21 +5,21 @@
 class PscaleProxy < Formula
   desc "The PlanetScale SQL Proxy"
   homepage "https://planetscale.com/"
-  version "0.5.0"
+  version "0.6.0"
   license "Apache 2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.5.0/pscale-proxy_0.5.0_macOS_amd64.tar.gz"
-    sha256 "c4727813f0cbd8bb641ce705f20bc142c82634502b5be3b84d32455063097661"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.6.0/pscale-proxy_0.6.0_macOS_amd64.tar.gz"
+    sha256 "ee511f7edece4dc32d3b28c7d7a35e9fd50851cfc7ebf4378a99da44bd0801f1"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.5.0/pscale-proxy_0.5.0_linux_amd64.tar.gz"
-    sha256 "eeaed0210d27098773e40df7dadfb11c5b3e0b1d2b1e31dbcc7ffd7ef85da028"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.6.0/pscale-proxy_0.6.0_linux_amd64.tar.gz"
+    sha256 "3ab065664f09caa7cdf06a73c495aefc009646e32e95d7c3bb28212156050635"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/planetscale/sql-proxy/releases/download/v0.5.0/pscale-proxy_0.5.0_linux_arm64.tar.gz"
-    sha256 "1355e1753d9a83a11f52077f546621a28c7ae11f6045af533ba215ef3ab4a3cd"
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.6.0/pscale-proxy_0.6.0_linux_arm64.tar.gz"
+    sha256 "5eb5025a2a95aad18407d9a7206403d1cea9e1858070ee44f83c9c0d74edd31b"
   end
 
   def install
