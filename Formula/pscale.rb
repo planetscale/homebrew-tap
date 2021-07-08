@@ -5,21 +5,21 @@
 class Pscale < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.52.0"
+  version "0.53.0"
   license "Apache 2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/planetscale/cli/releases/download/v0.52.0/pscale_0.52.0_macOS_amd64.tar.gz"
-    sha256 "bd61c28bc74c18ec5ac05278470d762c4ec02615f799b6a87a30da6648e4f897"
+    url "https://github.com/planetscale/cli/releases/download/v0.53.0/pscale_0.53.0_macOS_amd64.tar.gz"
+    sha256 "1ff5db28a31ad4100f0373e1d54cf09eec45a67af331d7c649fe5fac47b57a16"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/planetscale/cli/releases/download/v0.52.0/pscale_0.52.0_linux_amd64.tar.gz"
-    sha256 "9f33aa38f43e0722f6c63a3b81defb84c3cda3e9e5dcaf44e2720a6beeb84c1c"
+    url "https://github.com/planetscale/cli/releases/download/v0.53.0/pscale_0.53.0_linux_amd64.tar.gz"
+    sha256 "132c8af3052e6e257df214b94d6904759f6602de66a944c60ad9afb1a04fa8c9"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/planetscale/cli/releases/download/v0.52.0/pscale_0.52.0_linux_arm64.tar.gz"
-    sha256 "bae623dd27b6038121fc93a60c53b916e1255bf304d3c7e62a506fef0ae98bac"
+    url "https://github.com/planetscale/cli/releases/download/v0.53.0/pscale_0.53.0_linux_arm64.tar.gz"
+    sha256 "fd7e6ae1cd74aef908c1d500313ceaf3ff8829babeb98caff707203d066a715e"
   end
 
   depends_on "mysql" => :optional
