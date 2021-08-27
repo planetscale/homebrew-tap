@@ -10,10 +10,8 @@ class PscaleProxy < Formula
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetscale/sql-proxy/releases/download/v0.10.0/pscale-proxy_0.10.0_macOS_amd64.tar.gz"
-      sha256 "cf4db92e1d8ed03bbb6dbedeee43295b1dfd73c45cc43d3eebc7c981cf5948b1"
-    end
+    url "https://github.com/planetscale/sql-proxy/releases/download/v0.10.0/pscale-proxy_0.10.0_macOS_amd64.tar.gz"
+    sha256 "cf4db92e1d8ed03bbb6dbedeee43295b1dfd73c45cc43d3eebc7c981cf5948b1"
   end
 
   on_linux do
