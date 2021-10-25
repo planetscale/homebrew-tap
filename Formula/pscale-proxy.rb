@@ -7,7 +7,6 @@ class PscaleProxy < Formula
   homepage "https://planetscale.com/"
   version "0.11.0"
   license "Apache 2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
