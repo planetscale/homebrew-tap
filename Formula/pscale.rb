@@ -5,13 +5,13 @@
 class Pscale < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.84.0"
+  version "0.85.0"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetscale/cli/releases/download/v0.84.0/pscale_0.84.0_macOS_amd64.tar.gz"
-      sha256 "5e7c097d71430a5a3656da8511c230b0493f57b205acb34baef3a3e35cb8c22d"
+      url "https://github.com/planetscale/cli/releases/download/v0.85.0/pscale_0.85.0_macOS_amd64.tar.gz"
+      sha256 "665f9752f394b3f879c400c062ac69b569ddfd53b7d8429ffb3a66b6cccc281d"
 
       def install
         bin.install "pscale"
@@ -21,8 +21,8 @@ class Pscale < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetscale/cli/releases/download/v0.84.0/pscale_0.84.0_macOS_arm64.tar.gz"
-      sha256 "f9db3a913637025594d4f679594f8f2dc5a70380031d653e9219d649267a0105"
+      url "https://github.com/planetscale/cli/releases/download/v0.85.0/pscale_0.85.0_macOS_arm64.tar.gz"
+      sha256 "52dd34d66f2c0e95b4135b6787747f7e4b60a5bbdd158d80276b424e375d8541"
 
       def install
         bin.install "pscale"
@@ -34,9 +34,9 @@ class Pscale < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/cli/releases/download/v0.84.0/pscale_0.84.0_linux_arm64.tar.gz"
-      sha256 "22f91ecb2a9478fe01aec348edc4743eeaa6ff749fca03d609d89a303315513d"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetscale/cli/releases/download/v0.85.0/pscale_0.85.0_linux_amd64.tar.gz"
+      sha256 "0cb35759881c136036e3e8fecdcd4fcbc738058a901135cf797d00e211196c29"
 
       def install
         bin.install "pscale"
@@ -45,9 +45,9 @@ class Pscale < Formula
         fish_completion.install "completions/pscale.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/planetscale/cli/releases/download/v0.84.0/pscale_0.84.0_linux_amd64.tar.gz"
-      sha256 "cd76c37210f0c7e29dd4c0242751f6b78c2badaf203a1f85f1a85c8950956574"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/planetscale/cli/releases/download/v0.85.0/pscale_0.85.0_linux_arm64.tar.gz"
+      sha256 "52f8bab23cdfabb10dd6cf713c24b75ede51981f3feac7b6e4d52732a4adc48a"
 
       def install
         bin.install "pscale"
