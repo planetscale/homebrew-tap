@@ -5,21 +5,21 @@
 class PsSingerTap < Formula
   desc "The PlanetScale Singer.io Tap"
   homepage "https://planetscale.com/"
-  version "0.4.0"
+  version "0.5.0"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.4.0/ps-singer-tap_0.4.0_darwin_arm64.tar.gz"
-      sha256 "8b63952e25439c03d6f559050b5454e1dcf842d338ac5203f337f003af2d0d9d"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.5.0/ps-singer-tap_0.5.0_darwin_arm64.tar.gz"
+      sha256 "8a6411acf261935a0c53b0f0bd9d42d165a31b27a119d5a6d999c73037509b45"
 
       def install
         bin.install "ps-singer-tap"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.4.0/ps-singer-tap_0.4.0_darwin_amd64.tar.gz"
-      sha256 "ed849b683581795a782f32c12aafb84562b871ac2cbb39eec776426581ec5385"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.5.0/ps-singer-tap_0.5.0_darwin_amd64.tar.gz"
+      sha256 "c276733d12839725c62f3f4022b440aea173b6d74b8c865accef6efd76b2497c"
 
       def install
         bin.install "ps-singer-tap"
@@ -29,24 +29,24 @@ class PsSingerTap < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.4.0/ps-singer-tap_0.4.0_linux_armv6.tar.gz"
-      sha256 "639b86d5a65065ff411e8ee4dff7279e26f6f539607e63a8c20cbe8b06346618"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.5.0/ps-singer-tap_0.5.0_linux_armv6.tar.gz"
+      sha256 "b3e2ba0dcca3d5ab77e19705e9cbdaca6c02dfb2f656c1334d1a7ec7ada4bf49"
 
       def install
         bin.install "ps-singer-tap"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.4.0/ps-singer-tap_0.4.0_linux_arm64.tar.gz"
-      sha256 "17715675ca6945495adb6a8f8cab8422ede2e80baee0917f8d3779046c700216"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.5.0/ps-singer-tap_0.5.0_linux_arm64.tar.gz"
+      sha256 "578a0661984627180c0fc684390a3908dbb7de3adc04afb2b2c7cd6ccb777328"
 
       def install
         bin.install "ps-singer-tap"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.4.0/ps-singer-tap_0.4.0_linux_amd64.tar.gz"
-      sha256 "dd43ad728af38817744af698a71fa479fd3946c73846f030da8e7857198af9e9"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.5.0/ps-singer-tap_0.5.0_linux_amd64.tar.gz"
+      sha256 "d2f2fdb4bc39c54623e61c87d796fccf247fe6ba07730893e9aa2ea72cc680fe"
 
       def install
         bin.install "ps-singer-tap"
