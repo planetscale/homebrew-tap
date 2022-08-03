@@ -5,21 +5,21 @@
 class PsHttpTap < Formula
   desc "Singer.io HTTP Tap"
   homepage "https://planetscale.com/"
-  version "0.9.0"
+  version "0.10.0"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.9.0/ps-singer-tap_0.9.0_darwin_arm64.tar.gz"
-      sha256 "5f05b69760b22b8f3ede1d34b247de0d3880f4bc72aed4a020060056740f1441"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.10.0/ps-singer-tap_0.10.0_darwin_arm64.tar.gz"
+      sha256 "c1247a72bb95eb953bd019ed5f4c2265b533cd169610001b5e76382615090238"
 
       def install
         bin.install "ps-http-tap"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.9.0/ps-singer-tap_0.9.0_darwin_amd64.tar.gz"
-      sha256 "0e318f4d048a6fbabd83795caace6da5cb8d35dd9583e0889e0a5c91de7481c0"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.10.0/ps-singer-tap_0.10.0_darwin_amd64.tar.gz"
+      sha256 "92e7556ae3c4673ba884b2c97e624963da1d4c7e2cb2dcc274ec77e127fd64ec"
 
       def install
         bin.install "ps-http-tap"
@@ -28,25 +28,25 @@ class PsHttpTap < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.9.0/ps-singer-tap_0.9.0_linux_armv6.tar.gz"
-      sha256 "531f47e157442525cd7d4bcbca31c6652be24ca16d5444f667d9798d08b1d191"
-
-      def install
-        bin.install "ps-http-tap"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.9.0/ps-singer-tap_0.9.0_linux_arm64.tar.gz"
-      sha256 "c0f20e5053b57615cb8761cceb40f5076bc4941a66040ffb427366f3c72778ed"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.10.0/ps-singer-tap_0.10.0_linux_arm64.tar.gz"
+      sha256 "d21f50dc3f466a899f4ab4b27f47628145e0a0c7933a3649e75c568f19ad95e8"
 
       def install
         bin.install "ps-http-tap"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetscale/singer-tap/releases/download/v0.9.0/ps-singer-tap_0.9.0_linux_amd64.tar.gz"
-      sha256 "22059efad8d05d72890b703f145ac112251a1f2d377177d93d479a04b6dd3c5d"
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.10.0/ps-singer-tap_0.10.0_linux_amd64.tar.gz"
+      sha256 "7cd49d0e7fc59b08b83a4e59acfbaccfd028b381776e73cfe1e5f9b5fd727495"
+
+      def install
+        bin.install "ps-http-tap"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/planetscale/singer-tap/releases/download/v0.10.0/ps-singer-tap_0.10.0_linux_armv6.tar.gz"
+      sha256 "03fa211333dbb86b5ee2d5f46560fbc2185030458f604434ef9ca7e282ba6664"
 
       def install
         bin.install "ps-http-tap"
