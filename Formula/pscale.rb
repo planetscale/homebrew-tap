@@ -5,15 +5,15 @@
 class Pscale < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.197.0"
+  version "0.204.0"
   license "Apache 2.0"
 
   depends_on "mysql" => :optional
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/planetscale/cli/releases/download/v0.197.0/pscale_0.197.0_macOS_arm64.tar.gz"
-      sha256 "58a3ee6e312eddda6645d8d2cd3d3c925b65ea0281bbb43259bfeec6d8e36ce4"
+    on_intel do
+      url "https://github.com/planetscale/cli/releases/download/v0.204.0/pscale_0.204.0_macOS_amd64.tar.gz"
+      sha256 "f8f815d8c58a99b83147170e0689d97d8c05e9fee129594cef841bc52281531a"
 
       def install
         bin.install "pscale"
@@ -22,9 +22,9 @@ class Pscale < Formula
         fish_completion.install "completions/pscale.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/planetscale/cli/releases/download/v0.197.0/pscale_0.197.0_macOS_amd64.tar.gz"
-      sha256 "21d396cc15099c31d7d43f7cb5fabe17b43bdf172aceaf3e9f05079121ce277b"
+    on_arm do
+      url "https://github.com/planetscale/cli/releases/download/v0.204.0/pscale_0.204.0_macOS_arm64.tar.gz"
+      sha256 "9874ea133db0f51313ff51310d7d5f00401bd0a5e9bf7206c9b3d6786df9bd73"
 
       def install
         bin.install "pscale"
@@ -36,37 +36,43 @@ class Pscale < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/cli/releases/download/v0.197.0/pscale_0.197.0_linux_arm.tar.gz"
-      sha256 "18434b2d75a99c9f6ce7aeb855d426bc8f11c17449cac37122e6688ddcd4d87c"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/planetscale/cli/releases/download/v0.204.0/pscale_0.204.0_linux_amd64.tar.gz"
+        sha256 "83509db216c4818ef10129526ef173290254c7e5009726c7ec1721654bb9ff19"
 
-      def install
-        bin.install "pscale"
-        bash_completion.install "completions/pscale.bash" => "pscale"
-        zsh_completion.install "completions/pscale.zsh" => "_pscale"
-        fish_completion.install "completions/pscale.fish"
+        def install
+          bin.install "pscale"
+          bash_completion.install "completions/pscale.bash" => "pscale"
+          zsh_completion.install "completions/pscale.zsh" => "_pscale"
+          fish_completion.install "completions/pscale.fish"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetscale/cli/releases/download/v0.197.0/pscale_0.197.0_linux_arm64.tar.gz"
-      sha256 "51910d42b7dcff29aa01a4c404b3a43432e07c18dd5af7078e97fbd7c29932bc"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/planetscale/cli/releases/download/v0.204.0/pscale_0.204.0_linux_arm.tar.gz"
+        sha256 "dffa363b7cf6a79abb46e30efa30e58ce310cb557560d3443197d00b7b215672"
 
-      def install
-        bin.install "pscale"
-        bash_completion.install "completions/pscale.bash" => "pscale"
-        zsh_completion.install "completions/pscale.zsh" => "_pscale"
-        fish_completion.install "completions/pscale.fish"
+        def install
+          bin.install "pscale"
+          bash_completion.install "completions/pscale.bash" => "pscale"
+          zsh_completion.install "completions/pscale.zsh" => "_pscale"
+          fish_completion.install "completions/pscale.fish"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/planetscale/cli/releases/download/v0.197.0/pscale_0.197.0_linux_amd64.tar.gz"
-      sha256 "b975b0cb9e3002f731e934863025ac95b5247167caed59dabba4787ffe3f2eab"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/planetscale/cli/releases/download/v0.204.0/pscale_0.204.0_linux_arm64.tar.gz"
+        sha256 "49089695bbbf525efa9321703e98190f434f5d9307146bc44dd6e5713f78c54a"
 
-      def install
-        bin.install "pscale"
-        bash_completion.install "completions/pscale.bash" => "pscale"
-        zsh_completion.install "completions/pscale.zsh" => "_pscale"
-        fish_completion.install "completions/pscale.fish"
+        def install
+          bin.install "pscale"
+          bash_completion.install "completions/pscale.bash" => "pscale"
+          zsh_completion.install "completions/pscale.zsh" => "_pscale"
+          fish_completion.install "completions/pscale.fish"
+        end
       end
     end
   end
