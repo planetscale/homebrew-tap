@@ -5,15 +5,15 @@
 class Pscale < Formula
   desc "The PlanetScale CLI"
   homepage "https://planetscale.com/"
-  version "0.247.0"
+  version "0.249.0"
   license "Apache 2.0"
 
   depends_on "mysql" => :optional
 
   on_macos do
-    on_intel do
-      url "https://github.com/planetscale/cli/releases/download/v0.247.0/pscale_0.247.0_macOS_amd64.tar.gz"
-      sha256 "631725e9152bb27f7c2def397ce7b24abb37014855a9e8580ea7c9dd3c25e820"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetscale/cli/releases/download/v0.249.0/pscale_0.249.0_macOS_amd64.tar.gz"
+      sha256 "61256410f34b1b64fd6c7c90b7ec490bb197a3d5682df5bb49fbaf6f7d61cfd2"
 
       def install
         bin.install "pscale"
@@ -22,9 +22,9 @@ class Pscale < Formula
         fish_completion.install "completions/pscale.fish"
       end
     end
-    on_arm do
-      url "https://github.com/planetscale/cli/releases/download/v0.247.0/pscale_0.247.0_macOS_arm64.tar.gz"
-      sha256 "641869e8fb5097ac67c310e56683c5df1aec91f30c43d8b5c74b6e09a8bf249d"
+    if Hardware::CPU.arm?
+      url "https://github.com/planetscale/cli/releases/download/v0.249.0/pscale_0.249.0_macOS_arm64.tar.gz"
+      sha256 "bf84946168bba07576645aab197e8a356ee974cd20d2f49fde516a3523be6d25"
 
       def install
         bin.install "pscale"
@@ -36,43 +36,34 @@ class Pscale < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/planetscale/cli/releases/download/v0.247.0/pscale_0.247.0_linux_amd64.tar.gz"
-        sha256 "2f30ad905e6b311f6e114acccf3ced1b2644c1cefc0b28dad88bad1df4a8c08b"
-
-        def install
-          bin.install "pscale"
-          bash_completion.install "completions/pscale.bash" => "pscale"
-          zsh_completion.install "completions/pscale.zsh" => "_pscale"
-          fish_completion.install "completions/pscale.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/planetscale/cli/releases/download/v0.249.0/pscale_0.249.0_linux_amd64.tar.gz"
+      sha256 "8b5f031795b1cc32a6bcbdbe59c4dea7abb28b30a6fcdca487bb3042b4a322e5"
+      def install
+        bin.install "pscale"
+        bash_completion.install "completions/pscale.bash" => "pscale"
+        zsh_completion.install "completions/pscale.zsh" => "_pscale"
+        fish_completion.install "completions/pscale.fish"
       end
     end
-    on_arm do
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/planetscale/cli/releases/download/v0.247.0/pscale_0.247.0_linux_arm.tar.gz"
-        sha256 "cb98490e5c774fef40f5e5d0f22168a893eaab18480715c41d7cdb43952b85da"
-
-        def install
-          bin.install "pscale"
-          bash_completion.install "completions/pscale.bash" => "pscale"
-          zsh_completion.install "completions/pscale.zsh" => "_pscale"
-          fish_completion.install "completions/pscale.fish"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/planetscale/cli/releases/download/v0.249.0/pscale_0.249.0_linux_arm.tar.gz"
+      sha256 "fb40509939e87d688442f7def8607bde0f0f082a5e6ede51ad84cfa341ef4c59"
+      def install
+        bin.install "pscale"
+        bash_completion.install "completions/pscale.bash" => "pscale"
+        zsh_completion.install "completions/pscale.zsh" => "_pscale"
+        fish_completion.install "completions/pscale.fish"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/planetscale/cli/releases/download/v0.247.0/pscale_0.247.0_linux_arm64.tar.gz"
-        sha256 "9d835a02d744137e57b3c570f4ce278efa27006048e1de4c93e10f1b6023f27e"
-
-        def install
-          bin.install "pscale"
-          bash_completion.install "completions/pscale.bash" => "pscale"
-          zsh_completion.install "completions/pscale.zsh" => "_pscale"
-          fish_completion.install "completions/pscale.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/planetscale/cli/releases/download/v0.249.0/pscale_0.249.0_linux_arm64.tar.gz"
+      sha256 "4560236d6ab7c301dfa012c0227db6b18cb47c0672d07f62481f8e2908d72fee"
+      def install
+        bin.install "pscale"
+        bash_completion.install "completions/pscale.bash" => "pscale"
+        zsh_completion.install "completions/pscale.zsh" => "_pscale"
+        fish_completion.install "completions/pscale.fish"
       end
     end
   end
